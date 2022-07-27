@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Bank {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long bankId;
 	private String bankName;
 	private String code;
@@ -17,11 +17,7 @@ public class Bank {
 	private int noOfBranches;
 	private String status;
 	
-	
-	public Bank() {
-		super();
-	}
-	
+
 	public Bank(long bankId, String bankName, String code, String incorporateDate, int noOfStaff, int noOfBranches,
 			String status) {
 		super();
@@ -33,6 +29,11 @@ public class Bank {
 		this.noOfBranches = noOfBranches;
 		this.status = status;
 	}
+	
+	public Bank() {
+		super();
+	}
+	
 	public long getBankId() {
 		return bankId;
 	}
