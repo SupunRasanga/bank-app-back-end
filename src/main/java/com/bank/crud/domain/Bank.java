@@ -1,4 +1,4 @@
-package com.bank.domain;
+package com.bank.crud.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,6 @@ import javax.persistence.Id;
 @Entity
 public class Bank {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long bankId;
 	private String bankName;
 	private String code;

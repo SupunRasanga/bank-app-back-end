@@ -1,12 +1,12 @@
-package com.bank.service;
+package com.bank.crud.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bank.domain.Bank;
-import com.bank.repository.BankRepository;
+import com.bank.crud.domain.Bank;
+import com.bank.crud.repository.BankRepository;
 
 @Service
 public class BankService {

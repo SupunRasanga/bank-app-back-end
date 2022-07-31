@@ -1,4 +1,4 @@
-package com.bank.controller;
+package com.bank.crud.controller;
 
 import java.util.List;
 
@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bank.domain.Bank;
-import com.bank.service.BankService;
+import com.bank.crud.domain.Bank;
+import com.bank.crud.service.BankService;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path = "/api/home/bank")
 public class BankController {
 	
