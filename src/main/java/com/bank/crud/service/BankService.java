@@ -49,4 +49,9 @@ public class BankService {
 		return bankRepositoy.findById(bankId);
 	}
 
+	//Get - Sorting Bank
+	public List<Bank> sortBanks(String sortBy){
+		return bankRepositoy.findAllSorted(sortBy);
+	}
+
 }
