@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bank.crud.domain.Bank;
@@ -50,5 +51,8 @@ public class BankController {
 	public Optional<Bank> getBankById(@PathVariable long bankId){
 		return bankService.getBankById(bankId);
 	}
+	
+	@GetMapping(path = "/sorting")
+	public List<Bank> sortBanks(@RequestParam())
 
 }
