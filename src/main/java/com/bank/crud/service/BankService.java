@@ -3,6 +3,7 @@ package com.bank.crud.service;
 import java.util.List;
 import java.util.Optional;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.bank.crud.domain.Bank;
 import com.bank.crud.repository.BankRepository;
 
+@Slf4j
 @Service
 public class BankService {
 	
@@ -51,8 +53,14 @@ public class BankService {
 	}
 
 	//Get - Sorting Bank
-	public List<Bank> sortBanks(String sortBy){
-		return bankRepositoy.findAll(Sort.by(sortBy)) ;
+	public List<Bank> sortBanks(String sortBy, String orderBy){
+		log.info(orderBy);
+		if(orderBy == "ASC"){
+			return bankRepositoy.sortBankByASC(sortBy) ;
+		}else {
+			return bankRepositoy.sortBankByDESC(sortBy);
+		}
+
 	}
 
 }

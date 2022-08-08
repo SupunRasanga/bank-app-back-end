@@ -12,7 +12,10 @@ import com.bank.crud.domain.Bank;
 @Repository
 public interface BankRepository extends JpaRepository<Bank, Long> {
 	
-//	@Query(value = "SELECT b FROM Bank b ORDER BY ?1")
-//	   public List<Bank> findAllSorted(@Param("sortBy") String sortBy);
+	@Query("SELECT b FROM Bank b ORDER BY :sortBy")
+	   public List<Bank> sortBankByASC(@Param("sortBy") String sortBy);
+
+	@Query("SELECT b FROM Bank b ORDER BY :sortBy DESC")
+	public List<Bank> sortBankByDESC(@Param("sortBy") String sortBy);
 
 }
