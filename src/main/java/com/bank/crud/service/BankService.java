@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.bank.crud.domain.Bank;
@@ -51,7 +52,7 @@ public class BankService {
 
 	//Get - Sorting Bank
 	public List<Bank> sortBanks(String sortBy){
-		return bankRepositoy.findAllSorted(sortBy);
+		return bankRepositoy.findAll(Sort.by(sortBy)) ;
 	}
 
 }
