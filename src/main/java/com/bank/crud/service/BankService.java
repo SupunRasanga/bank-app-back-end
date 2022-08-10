@@ -54,13 +54,57 @@ public class BankService {
 
 	//Get - Sorting Bank
 	public List<Bank> sortBanks(String sortBy, String orderBy){
-		log.info(orderBy);
-		if(orderBy == "ASC"){
-			return bankRepositoy.sortBankByASC(sortBy) ;
-		}else {
-			return bankRepositoy.sortBankByDESC(sortBy);
+		if(sortBy.equals("bankId")){
+			if(orderBy.equals("ASC")){
+				return bankRepositoy.findAllByOrderByBankIdAsc();
+			}else{
+				return bankRepositoy.findAllByOrderByBankIdDesc();
+			}
+		}else if(sortBy.equals("bankName")){
+			if(orderBy.equals("ASC")){
+				return bankRepositoy.findAllByOrderByBankNameAsc();
+			}else{
+				return bankRepositoy.findAllByOrderByBankNameDesc();
+			}
+		}else if(sortBy.equals("code")){
+			if(orderBy.equals("ASC")){
+				return bankRepositoy.findAllByOrderByCodeAsc();
+			}else {
+				return bankRepositoy.findAllByOrderByCodeDesc();
+			}
+		}else if(sortBy.equals("incorporateDate")){
+			if(orderBy.equals("ASC")){
+				return bankRepositoy.findAllByOrderByIncorporateDateAsc();
+			}else {
+				return bankRepositoy.findAllByOrderByIncorporateDateDesc();
+			}
+		}else if(sortBy.equals("noOfStaff")){
+			if(orderBy.equals("ASC")){
+				return bankRepositoy.findAllByOrderByNoOfStaffAsc();
+			}else {
+				return bankRepositoy.findAllByOrderByNoOfStaffDesc();
+			}
+		}else if(sortBy.equals("noOfBranches")){
+			if(orderBy.equals("ASC")){
+				return bankRepositoy.findAllByOrderByNoOfBranchesAsc();
+			}else {
+				return bankRepositoy.findAllByOrderByNoOfBranchesDesc();
+			}
+		}else if(sortBy.equals("status")){
+			if(orderBy.equals("ASC")){
+				return bankRepositoy.findAllByOrderByStatusAsc();
+			}else{
+				return bankRepositoy.findAllByOrderByStatusDesc();
+			}
+		}else{
+			return null;
 		}
 
 	}
-
 }
+//this.bankName = bankName;
+//		this.code = code;
+//		this.incorporateDate = incorporateDate;
+//		this.noOfStaff = noOfStaff;
+//		this.noOfBranches = noOfBranches;
+//		this.status = status;
