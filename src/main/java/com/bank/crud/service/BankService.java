@@ -102,9 +102,3 @@ public class BankService {
 
 	}
 }
-//this.bankName = bankName;
-//		this.code = code;
-//		this.incorporateDate = incorporateDate;
-//		this.noOfStaff = noOfStaff;
-//		this.noOfBranches = noOfBranches;
-//		this.status = status;
