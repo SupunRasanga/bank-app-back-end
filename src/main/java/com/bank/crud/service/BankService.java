@@ -2,16 +2,11 @@ package com.bank.crud.service;
 
 import java.util.List;
 import java.util.Optional;
-
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
 import com.bank.crud.domain.Bank;
 import com.bank.crud.repository.BankRepository;
 
-@Slf4j
 @Service
 public class BankService {
 	
@@ -25,7 +20,7 @@ public class BankService {
 	
 	//Get - All Banks
 	public List<Bank> getAllBanks(){
-		return bankRepositoy.findAll();
+		return bankRepositoy.findAllByOrderByBankId();
 	}
 	
 	//Put - Update Bank
@@ -50,55 +45,5 @@ public class BankService {
 	//Get - Get Banks By Id
 	public Optional<Bank> getBankById(long bankId){
 		return bankRepositoy.findById(bankId);
-	}
-
-	//Get - Sorting Bank
-	public List<Bank> sortBanks(String sortBy, String orderBy){
-		if(sortBy.equals("bankId")){
-			if(orderBy.equals("ASC")){
-				return bankRepositoy.findAllByOrderByBankIdAsc();
-			}else{
-				return bankRepositoy.findAllByOrderByBankIdDesc();
-			}
-		}else if(sortBy.equals("bankName")){
-			if(orderBy.equals("ASC")){
-				return bankRepositoy.findAllByOrderByBankNameAsc();
-			}else{
-				return bankRepositoy.findAllByOrderByBankNameDesc();
-			}
-		}else if(sortBy.equals("code")){
-			if(orderBy.equals("ASC")){
-				return bankRepositoy.findAllByOrderByCodeAsc();
-			}else {
-				return bankRepositoy.findAllByOrderByCodeDesc();
-			}
-		}else if(sortBy.equals("incorporateDate")){
-			if(orderBy.equals("ASC")){
-				return bankRepositoy.findAllByOrderByIncorporateDateAsc();
-			}else {
-				return bankRepositoy.findAllByOrderByIncorporateDateDesc();
-			}
-		}else if(sortBy.equals("noOfStaff")){
-			if(orderBy.equals("ASC")){
-				return bankRepositoy.findAllByOrderByNoOfStaffAsc();
-			}else {
-				return bankRepositoy.findAllByOrderByNoOfStaffDesc();
-			}
-		}else if(sortBy.equals("noOfBranches")){
-			if(orderBy.equals("ASC")){
-				return bankRepositoy.findAllByOrderByNoOfBranchesAsc();
-			}else {
-				return bankRepositoy.findAllByOrderByNoOfBranchesDesc();
-			}
-		}else if(sortBy.equals("status")){
-			if(orderBy.equals("ASC")){
-				return bankRepositoy.findAllByOrderByStatusAsc();
-			}else{
-				return bankRepositoy.findAllByOrderByStatusDesc();
-			}
-		}else{
-			return null;
-		}
-
 	}
 }

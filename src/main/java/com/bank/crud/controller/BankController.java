@@ -52,10 +52,4 @@ public class BankController {
 		return bankService.getBankById(bankId);
 	}
 	
-	@GetMapping(path = "/sorting")
-	public List<Bank> sortBanks(@RequestParam(value = "sortBy", required = false) String sortBy,
-								@RequestParam(value = "orderBy", required = false) String orderBy){
-		return bankService.sortBanks(sortBy,orderBy);
-	}
-
 }
