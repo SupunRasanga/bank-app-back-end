@@ -19,7 +19,7 @@ import com.bank.crud.service.BankService;
 
 
 @RestController
-@CrossOrigin(origins = "https://spring-boot-banks.herokuapp.com")
+@CrossOrigin(origins = "https://bank-app-front-end.vercel.app")
 @RequestMapping(path = "/api/home/bank")
 public class BankController {
 	
